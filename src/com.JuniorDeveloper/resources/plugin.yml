@@ -1,0 +1,6 @@
+name: Mining System
+version: '${project.version}'
+main: mining.test.Test
+api-version: 1.18
+authors: [ JuniorDeveloper ]
+description: This is just a littel mining system, that is not meant for big uses, only if modified to need.
