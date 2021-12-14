@@ -24,7 +24,13 @@ public class MineMain extends JavaPlugin {
 
     @Override
     public void onEnable() {
+
         super.onEnable();
         System.out.println(MessageManager.PLUGIN_ENABLE.getMessage());
+        Listeners();
+    }
+
+    public static void Listeners() {
+
     }
 }
