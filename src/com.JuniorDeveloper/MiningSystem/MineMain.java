@@ -1,3 +1,4 @@
+
 import Messages.MessageManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.PluginCommand;
