@@ -9,7 +9,8 @@ public enum MessageManager {
     PLUGIN_ENABLE("plugin_enabled", ChatColor.GREEN + "The MiningSystem has activated, Version: " + Bukkit.getVersion() ), //<-- LET GOED OP DIT
     PLUGIN_DISABLE("plugin_disabled", ChatColor.RED + "The Mining System has deactivated, Version: " + Bukkit.getVersion()),
     ERROR("error", "&4 [ERROR]"),
-    TEST("TEST", "TEST");
+    LEVELED_UP("level_up", "&4You have LEVELED UP!"),
+    WHY("WHY", "&6How have you achieved this?");
 
 
 
