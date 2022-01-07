@@ -1,0 +1,32 @@
+#Dit zijn achievements voor blokken dat je zou hakken
+# DIAMOND
+# COAL
+# IRON
+# GOLD
+# REDSTONE
+# LAPIS
+# EMERALD
+# QUARTZ
+
+#Every block you mine you get XP: Defined below
+ore_XP:
+  DIAMOND_ORE:
+    xp: 20
+  COAL_ORE:
+    xp: 20
+  IRON_ORE:
+    xp: 20
+  GOLD_ORE:
+    xp: 20
+  REDSTONE_ORE:
+    xp: 20
+  LAPIS_ORE:
+    xp: 20
+  EMERALD_ORE:
+    xp: 20
+  QUARTZ_ORE:
+    xp: 20
+
+
+
+

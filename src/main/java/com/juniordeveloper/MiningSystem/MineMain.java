@@ -1,6 +1,7 @@
 package com.juniordeveloper.MiningSystem;
 
 
+import com.juniordeveloper.MiningSystem.config.ConfigAchievement;
 import com.juniordeveloper.MiningSystem.events.onBreak;
 import com.juniordeveloper.MiningSystem.events.onJoin;
 import com.juniordeveloper.MiningSystem.messages.MessageManager;
@@ -14,6 +15,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class MineMain extends JavaPlugin {
     public static HikariDataSource hikariDataSource;
+
     public static MineMain instance;
 
     public static MineMain getInstance() {return instance;}
@@ -36,12 +38,12 @@ public class MineMain extends JavaPlugin {
     @Override
     public void onEnable() {
         instance = this;
-        Listeners();
         hikariDataSource = new HikariDataSource(new HikariConfig(){{
             super.setJdbcUrl("sqlite://G:\\Coding\\SQLLITE\\DATABASE.db");
         }});
 
-
+        Listeners();
+        Configs();
         System.out.println(MessageManager.PLUGIN_ENABLE.getMessage());
 
     }
@@ -50,5 +52,8 @@ public class MineMain extends JavaPlugin {
         Bukkit.getServer().getPluginManager().registerEvents(new onBreak(), this);
         Bukkit.getServer().getPluginManager().registerEvents(new onJoin(), this);
 
+    }
+    public void Configs() {
+        ConfigAchievement.createAchievementFile();
     }
 }
