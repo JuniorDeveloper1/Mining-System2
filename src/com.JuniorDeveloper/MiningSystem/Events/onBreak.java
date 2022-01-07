@@ -13,9 +13,7 @@ public class onBreak implements Listener {
     @EventHandler
     public void onBreak(BlockBreakEvent event) {
         Player p = event.getPlayer();
-        UUID puuid = p.getUniqueId(); //Player UUID
-
-
+        UUID puuid = p.getUniqueId();
 
     }
 }

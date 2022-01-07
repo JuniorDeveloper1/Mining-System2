@@ -20,7 +20,7 @@ public class StaticList {
         Random r = new Random();
         int randomMaterial = r.nextInt(material.size());
         Material randomElement = material.get(randomMaterial);
-
+        
 
     }
 

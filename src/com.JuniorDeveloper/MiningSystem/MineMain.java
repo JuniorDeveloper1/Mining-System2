@@ -9,12 +9,13 @@ import org.jetbrains.annotations.Nullable;
 public class MineMain extends JavaPlugin {
 
 
+
     @Override
     public @Nullable PluginCommand getCommand(@NotNull String name) {
         return super.getCommand(name);
     }
 
-
+// ik wens je veel plezier haha hahahaha
 
 
     @Override
