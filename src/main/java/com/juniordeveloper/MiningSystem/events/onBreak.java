@@ -1,6 +1,8 @@
 
 package com.juniordeveloper.MiningSystem.events;
 
+import com.juniordeveloper.MiningSystem.achievements.AchievementsMaterial;
+import com.juniordeveloper.MiningSystem.config.ConfigAchievement;
 import com.juniordeveloper.MiningSystem.data.OreRandomizer;
 import com.juniordeveloper.MiningSystem.MineMain;
 import com.juniordeveloper.MiningSystem.data.StaticMaps;
@@ -33,6 +35,8 @@ public class onBreak implements Listener {
      *     Pak de Current XP amount + De XP per block.
      *     </-->
      */
+    MineMain plugin = MineMain.getInstance();
+
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onBreak(BlockBreakEvent event) {
         double xpPerOre = 0; //TODO: Fetch from config
@@ -70,7 +74,7 @@ public class onBreak implements Listener {
         }
 
 
-        if(blockType.name().contains("ORE")) {
+        if(blockType.equals(AchievementsMaterial.COAL_ORE.getMaterial())) {
 
         }
 
