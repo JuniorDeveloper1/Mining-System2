@@ -9,13 +9,8 @@ public class BlockCounter {
     public static void unNamed(Player player) {
 
         
-        levelCheck();
+        LevelingManager.levelCheck();
     }
 
-    static void levelCheck() {
-        if(LevelingManager.getCurrent_xpamount() <= XpAmount.getTotalXPRequirdForLevelUp())
-            LevelingManager.setLevel(LevelingManager.getLevel()+1);
-
-    }
 
 }
