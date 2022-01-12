@@ -1,10 +1,13 @@
 package com.juniordeveloper.MiningSystem.achievements;
 
+import com.juniordeveloper.MiningSystem.MineMain;
 import com.juniordeveloper.MiningSystem.config.ConfigAchievement;
 import org.bukkit.Material;
 
 
+
 public enum AchievementsMaterial {
+
 
     /**
      * Materials:
@@ -38,7 +41,7 @@ public enum AchievementsMaterial {
 
 
 
-
+    private static MineMain plugin;
     private Material material;
     private int xpAmountPerBlock;
 

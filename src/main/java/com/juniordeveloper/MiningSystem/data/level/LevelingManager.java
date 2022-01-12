@@ -1,19 +1,18 @@
 package com.juniordeveloper.MiningSystem.data.level;
 
 import com.juniordeveloper.MiningSystem.MineMain;
+import org.bukkit.entity.Player;
 import org.jetbrains.annotations.Contract;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.UUID;
-import java.util.logging.Level;
 
 public class LevelingManager {
 
     public static HashMap<UUID, LevelingManager> levelingManagerArrayList = new HashMap<>();
+   static Player player;
 
     /**
      * TODO: For usage => Comment will be deleted
@@ -28,18 +27,18 @@ public class LevelingManager {
     private static int current_xpamount = 0;
     XpAmount xpAmount = new XpAmount();
 
-    public LevelingManager(int level, int current_xpamount) {
+    public LevelingManager(int level, Integer current_xpamount) {
         this.level = level;
         this.current_xpamount = current_xpamount;
     }
 
 
-    public static void init() {
-       try(Connection c = MineMain.hikariDataSource.getConnection()) {
-       } catch (SQLException e) {
-           e.printStackTrace();
-       }
-    }
+  //  public static void init() {
+  //     try(Connection c = MineMain.hikariDataSource.getConnection()) {
+  //} catch (SQLException e) {
+  //         e.printStackTrace();
+   //    }
+   // }
 
     public static void firstJoin() {LevelingManager.setLevel(1);}
 
@@ -79,6 +78,12 @@ public class LevelingManager {
     public static void levelCheck() {
         if(LevelingManager.getCurrent_xpamount() <= XpAmount.getTotalXPRequirdForLevelUp())
             LevelingManager.setLevel(LevelingManager.getLevel()+1);
+    }
+
+    public static void setPlayerLevel(Player player, int amount) {
+        levelingManagerArrayList.put(player.getUniqueId(), new LevelingManager(amount, null));
+
+
     }
 
 

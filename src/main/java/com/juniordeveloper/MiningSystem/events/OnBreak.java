@@ -5,7 +5,6 @@ import com.juniordeveloper.MiningSystem.achievements.AchievementsMaterial;
 import com.juniordeveloper.MiningSystem.config.ConfigAchievement;
 import com.juniordeveloper.MiningSystem.data.OreRandomizer;
 import com.juniordeveloper.MiningSystem.MineMain;
-import com.juniordeveloper.MiningSystem.data.StaticMaps;
 import com.juniordeveloper.MiningSystem.data.level.LevelingManager;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -13,17 +12,14 @@ import org.bukkit.block.Block;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.UUID;
 
-public class onBreak implements Listener {
+public class OnBreak implements Listener {
 
 
     /**
@@ -38,7 +34,7 @@ public class onBreak implements Listener {
      */
     MineMain plugin = MineMain.getInstance();
 
-    @EventHandler(priority = EventPriority.HIGHEST)
+    @EventHandler
     public void onBreak(BlockBreakEvent event) {
 
         FileConfiguration achievementConfig = ConfigAchievement.getAchievementConfig();
@@ -73,9 +69,11 @@ public class onBreak implements Listener {
          * QUARTZ
          */
 
-        if(Arrays.stream(new Material[] {Material.DIAMOND_ORE, Material.COAL_ORE, Material.IRON_ORE, Material.GOLD_ORE,
+        Material[] materials = new Material[] {Material.DIAMOND_ORE, Material.COAL_ORE, Material.IRON_ORE, Material.GOLD_ORE,
                 Material.REDSTONE_ORE, Material.LAPIS_ORE, Material.LAPIS_ORE,
-                Material.EMERALD_ORE, Material.NETHER_QUARTZ_ORE} ).anyMatch(t -> blockType == t)) {
+                Material.EMERALD_ORE, Material.NETHER_QUARTZ_ORE};
+
+        if(Arrays.stream(materials).anyMatch(t -> blockType == t)) {
             block.setType(bedrock);
             Bukkit.getScheduler().runTaskLater(MineMain.getInstance(), () -> block.setType(OreRandomizer.oreRandomizer()), 1200);
         }

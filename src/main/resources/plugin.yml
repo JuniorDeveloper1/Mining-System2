@@ -1,5 +1,7 @@
-name: Mining System
+name: Mining_System
 version: '${project.version}'
-main: com.juniordeveloper.miningsystem
+main: com.juniordeveloper.MiningSystem.MineMain
 api-version: 1.18
 authors: [ JuniorDevelopers ]
+depend:
+  - CommandAPI
