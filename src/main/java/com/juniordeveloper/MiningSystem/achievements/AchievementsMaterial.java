@@ -30,7 +30,8 @@ public enum AchievementsMaterial {
     REDSTONE_ORE(Material.REDSTONE_ORE, ConfigAchievement.getAchievementConfig().getInt("ore_XP.REDSTONE_ORE.xp")),
     LAPIS_ORE(Material.LAPIS_ORE, ConfigAchievement.getAchievementConfig().getInt("ore_XP.LAPIS_ORE.xp")),
     EMERALD_ORE(Material.EMERALD_ORE, ConfigAchievement.getAchievementConfig().getInt("ore_XP.EMERALD_ORE.xp")),
-    QUARTZ_ORE(Material.NETHER_QUARTZ_ORE, ConfigAchievement.getAchievementConfig().getInt("ore_XP.QUARTZ_ORE.xp"));
+    QUARTZ_ORE(Material.NETHER_QUARTZ_ORE, ConfigAchievement.getAchievementConfig().getInt("ore_XP.QUARTZ_ORE.xp")),
+    COPPER_ORE(Material.NETHER_QUARTZ_ORE, ConfigAchievement.getAchievementConfig().getInt("ore_XP.COPPER_ORE.xp"));
 
 
      //  GOLD_ORE(ConfigAchievement.getAchievementConfig().getString("ore_XP.GOLD_ORE"), "gold_ore"),
