@@ -51,10 +51,6 @@ public class LevelCommand {
                     assert otherPlayer != null;
                     LevelingManager.setPlayerLevel(otherPlayer, amount);
                     sender.sendMessage(otherPlayer + "'s," + "level is now " + LevelingManager.getLevel());
-
-
-
-
         }).register();
     }
 

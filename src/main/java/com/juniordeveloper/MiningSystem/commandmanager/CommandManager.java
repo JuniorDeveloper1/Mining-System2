@@ -9,7 +9,9 @@ public class CommandManager {
 
     public void loadcommands() {
         levelCommand.setLevel();
+        levelCommand.getLevel();
         levelCommand.setPlayerLevel();
+
 
 
     }
