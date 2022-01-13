@@ -26,7 +26,8 @@ ore_XP:
     xp: 20
   QUARTZ_ORE:
     xp: 20
-
+  COPPER_ORE:
+    xp: 20
 
 
 

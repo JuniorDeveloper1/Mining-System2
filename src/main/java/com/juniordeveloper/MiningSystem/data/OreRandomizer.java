@@ -18,12 +18,13 @@ public class OreRandomizer {
 
         java.util.List<Material> material =  Arrays.asList(Material.DIAMOND_ORE, Material.IRON_ORE, Material.LAPIS_ORE,
                                                            Material.COAL_ORE, Material.REDSTONE_ORE, Material.EMERALD_ORE,
-                                                           Material.COPPER_ORE);
+                                                             Material.COPPER_ORE, Material.NETHER_QUARTZ_ORE);
 
 
 
         int randomMaterial = r.nextInt(material.size());
         Material randomElement = material.get(randomMaterial);
+
         return randomElement;
     }
 
