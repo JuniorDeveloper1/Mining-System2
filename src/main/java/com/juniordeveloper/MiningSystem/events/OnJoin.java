@@ -11,6 +11,8 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import java.util.UUID;
 
 public class OnJoin implements Listener {
+
+
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();

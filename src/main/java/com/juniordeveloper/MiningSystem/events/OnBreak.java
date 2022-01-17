@@ -1,10 +1,10 @@
 
 package com.juniordeveloper.MiningSystem.events;
 
+import com.juniordeveloper.MiningSystem.MineMain;
 import com.juniordeveloper.MiningSystem.achievements.AchievementsMaterial;
 import com.juniordeveloper.MiningSystem.config.ConfigAchievement;
 import com.juniordeveloper.MiningSystem.data.OreRandomizer;
-import com.juniordeveloper.MiningSystem.MineMain;
 import com.juniordeveloper.MiningSystem.data.level.LevelingManager;
 import com.juniordeveloper.MiningSystem.messages.MessageManager;
 import org.bukkit.Bukkit;
@@ -57,6 +57,7 @@ public class OnBreak implements Listener {
 
 
 
+
         Material bedrock = Material.BEDROCK;
 
         /**
@@ -77,7 +78,7 @@ public class OnBreak implements Listener {
         if(Arrays.stream(materials).anyMatch(t -> blockType.equals(t))) {
 
             Bukkit.getScheduler().runTaskLater(MineMain.getInstance(), () -> block.setType(bedrock), 1);
-            Bukkit.getScheduler().runTaskLater(MineMain.getInstance(), () -> block.setType(OreRandomizer.oreRandomizer()), 20);;
+            Bukkit.getScheduler().runTaskLater(MineMain.getInstance(), () -> block.setType(OreRandomizer.oreRandomizer()), 350);;
         }
 
 
