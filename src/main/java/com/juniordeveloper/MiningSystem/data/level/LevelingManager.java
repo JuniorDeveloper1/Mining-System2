@@ -1,35 +1,25 @@
 package com.juniordeveloper.MiningSystem.data.level;
 
-import com.juniordeveloper.MiningSystem.MineMain;
+import com.juniordeveloper.MiningSystem.config.ConfigSystem;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.Contract;
 
-import java.sql.Connection;
-import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.UUID;
 
 public class LevelingManager {
 
     public static HashMap<UUID, LevelingManager> levelingManagerArrayList = new HashMap<>();
-   static Player player;
 
-    /**
-     * TODO: For usage => Comment will be deleted
-     *  - Level will be saved into Database or Config,
-     *  - Multiplier will be setted in the CONFIG
-     *  - Amount of xp needed, can be discussed.
-     *  - Maximum Level will be with Config
-     */
     private  static int level = 0;
-     private static int multiplier = 0; // Multiplier has to be changed to config.
-    private  static int maxmimum = 150; // Set this in a config.
+     private static int multiplier = ConfigSystem.getSystemConfig().getInt("System.multiplier"); // Multiplier has to be changed to config.
+    private  static int maxmimum = ConfigSystem.getSystemConfig().getInt("System.maximum-xp") + 1; // Set this in a config.
     private static int current_xpamount = 0;
-    XpAmount xpAmount = new XpAmount();
 
-    public LevelingManager(int level, Integer current_xpamount) {
-        this.level = level;
-        this.current_xpamount = current_xpamount;
+
+    public LevelingManager(Integer level, Integer current_xpamount) {
+        LevelingManager.level = level;
+        LevelingManager.current_xpamount = current_xpamount;
     }
 
 
@@ -37,7 +27,9 @@ public class LevelingManager {
   //     try(Connection c = MineMain.hikariDataSource.getConnection()) {
   //} catch (SQLException e) {
   //         e.printStackTrace();
-   //    }
+    //
+    //}
+
    // }
 
     public static void firstJoin() {LevelingManager.setLevel(1);}
@@ -82,8 +74,9 @@ public class LevelingManager {
 
     public static void setPlayerLevel(Player player, int amount) {
         levelingManagerArrayList.put(player.getUniqueId(), new LevelingManager(amount, null));
-
-
+    }
+    public static void setPlayerXP(Player player, int current_xpamount) {
+        levelingManagerArrayList.put(player.getUniqueId(), new LevelingManager(null, current_xpamount));
     }
 
 

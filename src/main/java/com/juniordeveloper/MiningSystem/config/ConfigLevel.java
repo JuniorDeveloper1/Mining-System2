@@ -37,7 +37,7 @@ public class ConfigLevel {
 
         }catch (IOException | InvalidConfigurationException e) {
             e.printStackTrace();
-            }
+        }
     }
 
     public static void saveLevelingConfig() {
