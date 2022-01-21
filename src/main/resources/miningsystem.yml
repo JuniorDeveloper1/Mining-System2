@@ -1,3 +1,5 @@
 System:
-   maximum-xp: 150
+   maximum-level: 150
    multiplier: 10
+   scoreboard: true
+   action-bar: true

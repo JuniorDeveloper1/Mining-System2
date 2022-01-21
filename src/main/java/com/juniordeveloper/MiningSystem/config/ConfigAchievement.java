@@ -38,4 +38,12 @@ public class ConfigAchievement  {
             e.printStackTrace();
         }
     }
+
+    public static void saveAchievementConfig() {
+        try {
+            achievementConfig.save(achievementConfigFile);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

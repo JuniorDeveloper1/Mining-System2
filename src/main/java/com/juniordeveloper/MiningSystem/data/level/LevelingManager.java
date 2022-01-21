@@ -1,6 +1,8 @@
 package com.juniordeveloper.MiningSystem.data.level;
 
+import com.juniordeveloper.MiningSystem.config.ConfigLevel;
 import com.juniordeveloper.MiningSystem.config.ConfigSystem;
+import com.juniordeveloper.MiningSystem.messages.MessageManager;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.Contract;
 
@@ -13,7 +15,7 @@ public class LevelingManager {
 
     private  static int level = 0;
      private static int multiplier = ConfigSystem.getSystemConfig().getInt("System.multiplier"); // Multiplier has to be changed to config.
-    private  static int maxmimum = ConfigSystem.getSystemConfig().getInt("System.maximum-xp") + 1; // Set this in a config.
+    private  static int maxmimum = ConfigSystem.getSystemConfig().getInt("System.maximum-level") + 1; // Set this in a config.
     private static int current_xpamount = 0;
 
 
@@ -67,16 +69,20 @@ public class LevelingManager {
         LevelingManager.current_xpamount = current_xpamount;
     }
 
-    public static void levelCheck() {
-        if(LevelingManager.getCurrent_xpamount() <= XpAmount.getTotalXPRequirdForLevelUp())
+    public static void levelCheck(Player player) {
+        if(LevelingManager.getCurrent_xpamount() <= XpAmount.getTotalXPRequirdForLevelUp()) {
             LevelingManager.setLevel(LevelingManager.getLevel()+1);
+            ConfigLevel.getLevelingConfig().set("player_levels" + player.getUniqueId() + ".level", LevelingManager.getLevel());
+        player.sendMessage( MessageManager.LEVELED_UP.getMessage());
+        }
     }
 
     public static void setPlayerLevel(Player player, int amount) {
-        levelingManagerArrayList.put(player.getUniqueId(), new LevelingManager(amount, null));
+
+        levelingManagerArrayList.put(player.getUniqueId(), new LevelingManager(amount, 0));
     }
     public static void setPlayerXP(Player player, int current_xpamount) {
-        levelingManagerArrayList.put(player.getUniqueId(), new LevelingManager(null, current_xpamount));
+        levelingManagerArrayList.put(player.getUniqueId(), new LevelingManager(0, current_xpamount));
     }
 
 

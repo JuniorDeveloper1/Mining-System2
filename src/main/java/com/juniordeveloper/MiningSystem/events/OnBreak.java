@@ -41,7 +41,7 @@ public class OnBreak implements Listener {
         FileConfiguration achievementConfig = ConfigAchievement.getAchievementConfig();
 
         //Quick level check with every block break?
-        LevelingManager.levelCheck();
+
 
 
 
@@ -50,6 +50,7 @@ public class OnBreak implements Listener {
 
         Block block = event.getBlock();
         @NotNull Material blockType = event.getBlock().getType();
+        LevelingManager.levelCheck(player);
 
 
 
@@ -58,7 +59,7 @@ public class OnBreak implements Listener {
 
 
 
-        Material bedrock = Material.BEDROCK;
+
 
         /**
          * DIAMOND
@@ -77,8 +78,8 @@ public class OnBreak implements Listener {
 
         if(Arrays.stream(materials).anyMatch(t -> blockType.equals(t))) {
 
-            Bukkit.getScheduler().runTaskLater(MineMain.getInstance(), () -> block.setType(bedrock), 1);
-            Bukkit.getScheduler().runTaskLater(MineMain.getInstance(), () -> block.setType(OreRandomizer.oreRandomizer()), 350);;
+            Bukkit.getScheduler().runTaskLater(MineMain.getInstance(), () -> block.setType(Material.BEDROCK), 1);
+            Bukkit.getScheduler().runTaskLater(MineMain.getInstance(), () -> block.setType(OreRandomizer.oreRandomizer()), 20);
         }
 
 
