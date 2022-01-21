@@ -1,0 +1,11 @@
+Action Bar don't let it dissapear (-> ASYNC repeating task in OnEnable)
+
+Commands
+Fixing Bugs Leveling System
+Fixing Messages
+Layout
+
+Not Sure:
+
+Rank System
+Economy System
