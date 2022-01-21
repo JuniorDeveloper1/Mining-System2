@@ -1,13 +1,15 @@
 package com.juniordeveloper.MiningSystem.commandmanager.commands;
 
+import com.juniordeveloper.MiningSystem.config.ConfigLevel;
 import com.juniordeveloper.MiningSystem.data.level.LevelingManager;
 import dev.jorel.commandapi.CommandAPICommand;
 import dev.jorel.commandapi.arguments.IntegerArgument;
 import dev.jorel.commandapi.arguments.LiteralArgument;
 import dev.jorel.commandapi.arguments.PlayerArgument;
-import dev.jorel.commandapi.arguments.StringArgument;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
+
+import java.util.UUID;
 
 public class XpCommand {
 
@@ -15,12 +17,17 @@ public class XpCommand {
         new CommandAPICommand("mining")
                 .withArguments(new LiteralArgument("xp"))
                 .executes((sender, args) -> {
-                    sender.sendMessage("Your xp is: " + LevelingManager.getCurrent_xpamount());
+
+                    UUID playerUniqueId = ((Player) sender).getUniqueId();
+                    int current_level = ConfigLevel.getLevelingConfig().getInt("player_levels" + playerUniqueId + ".xp", LevelingManager.getCurrent_xpamount());
+
+                    sender.sendMessage("Your current level is:" + current_level);
                 }).register();
     }
 
     public void setXP() {
         new CommandAPICommand("mining")
+                .withArguments(new LiteralArgument("xp"))
                 .withArguments(new LiteralArgument("set"))
                 .withArguments(new IntegerArgument("amount"))
                 .executes((sender, args) ->
@@ -37,6 +44,7 @@ public class XpCommand {
 
     public void setPlayerXP() {
         new CommandAPICommand("mining")
+                .withArguments(new LiteralArgument("xp"))
                 .withArguments(new LiteralArgument("set"))
                 .withArguments(new PlayerArgument("player"))
                 .withArguments(new IntegerArgument("amount"))
@@ -44,6 +52,7 @@ public class XpCommand {
                 {
                     Player otherPlayer = Bukkit.getPlayer((String) args[2]);
                     int amount = (int) args[3];
+                    assert otherPlayer != null;
                     LevelingManager.setPlayerXP(otherPlayer, amount);
                     sender.sendMessage("You have added " + amount +"xp " + " to " + otherPlayer);
                     otherPlayer.sendMessage(sender.getName() + " has added " + amount + "xp");

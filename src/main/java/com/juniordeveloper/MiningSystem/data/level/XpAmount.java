@@ -1,11 +1,12 @@
 package com.juniordeveloper.MiningSystem.data.level;
 
 
+import com.juniordeveloper.MiningSystem.config.ConfigLevels;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
-import java.util.logging.Level;
-
-import static com.juniordeveloper.MiningSystem.data.level.LevelingManager.*;
+import static com.juniordeveloper.MiningSystem.data.level.LevelingManager.getLevel;
+import static com.juniordeveloper.MiningSystem.data.level.LevelingManager.getMultiplier;
 
 
 public class XpAmount {
@@ -20,6 +21,8 @@ public class XpAmount {
 
     public static int  getTotalXPRequirdForLevelUp() {
 
+        FileConfiguration configLevels = ConfigLevels.getLevelConfig();
+
         int level = getLevel();
 
 
@@ -31,7 +34,9 @@ public class XpAmount {
 
         for (int i = 0; i < LevelingManager.getMaxmimum(); i++) {
             totalXPRequirdForLevelUp = (int) (getMultiplier() + Math.pow(i, 1.5) + 10 * i);
-            System.out.println("Level " + i + " Amount of xp  " + totalXPRequirdForLevelUp);
+
+            configLevels.set("levels." + i + ".amount-of-xp", totalXPRequirdForLevelUp);
+            ConfigLevels.saveLevelConfig();
         }
 
         return totalXPRequirdForLevelUp;
