@@ -36,8 +36,9 @@ public class XpAmount {
             totalXPRequirdForLevelUp = (int) (getMultiplier() + Math.pow(i, 1.5) + 10 * i);
 
             configLevels.set("levels." + i + ".amount-of-xp", totalXPRequirdForLevelUp);
-            ConfigLevels.saveLevelConfig();
+
         }
+        ConfigLevels.saveLevelConfig();
 
         return totalXPRequirdForLevelUp;
     }

@@ -48,5 +48,14 @@ public class ConfigLevel {
         }
     }
 
+    public static void reloadLevelingConfig() {
+        try{
+            levelingConfig.load(levelingConfigFile);
+        }catch(IOException | InvalidConfigurationException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 
 }

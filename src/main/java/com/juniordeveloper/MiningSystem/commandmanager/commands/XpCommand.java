@@ -33,8 +33,12 @@ public class XpCommand {
                 .executes((sender, args) ->
                         {
                             int amount = (int) args[2];
-                            LevelingManager.setCurrent_xpamount(LevelingManager.getCurrent_xpamount() + amount);
+                            UUID playerUniqueId = ((Player) sender).getUniqueId();
+                            int currentAmount  = ConfigLevel.getLevelingConfig().getInt("player_levels" + playerUniqueId + ".xp");
+                            LevelingManager.setCurrent_xpamount(currentAmount +  amount);
                             sender.sendMessage("Your new xp is: " + LevelingManager.getCurrent_xpamount());
+                            ConfigLevel.saveLevelingConfig();
+                            ConfigLevel.reloadLevelingConfig();
 
                         }
 
@@ -50,12 +54,15 @@ public class XpCommand {
                 .withArguments(new IntegerArgument("amount"))
                 .executes((sender, args) ->
                 {
-                    Player otherPlayer = Bukkit.getPlayer((String) args[2]);
-                    int amount = (int) args[3];
+                    Player otherPlayer = Bukkit.getPlayer((String) args[0]);
+                    int amount = (int) args[1];
                     assert otherPlayer != null;
-                    LevelingManager.setPlayerXP(otherPlayer, amount);
+                    int currentAmount  = ConfigLevel.getLevelingConfig().getInt("player_levels" + otherPlayer.getUniqueId() + ".xp");
+                    LevelingManager.setPlayerXP(otherPlayer, currentAmount + amount);
                     sender.sendMessage("You have added " + amount +"xp " + " to " + otherPlayer);
                     otherPlayer.sendMessage(sender.getName() + " has added " + amount + "xp");
+                    ConfigLevel.saveLevelingConfig();
+                    ConfigLevel.reloadLevelingConfig();
                 }
                 ).register();
 

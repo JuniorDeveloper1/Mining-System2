@@ -15,7 +15,6 @@ import java.util.UUID;
 public class LevelCommand {
 
 
-
     public void getLevel() {
         new CommandAPICommand("mining")
                 .withArguments(new LiteralArgument("level"))
@@ -28,7 +27,7 @@ public class LevelCommand {
 
                         }
 
-                        ).register();
+                ).register();
     }
 
 
@@ -40,11 +39,16 @@ public class LevelCommand {
                 .executes((sender, args) -> {
                     UUID playerUniqueId = ((Player) sender).getUniqueId();
                     int amount = (int) args[1];
-                   LevelingManager.setLevel(amount);
+
+                    int currentAmount = ConfigLevel.getLevelingConfig().getInt("player_levels" + playerUniqueId + ".level");
+                    LevelingManager.setLevel(currentAmount + amount);
+                    ConfigLevel.saveLevelingConfig();
+                    ConfigLevel.reloadLevelingConfig();
 
                 })
                 .register();
     }
+
 
     public void setPlayerLevel() {
         new CommandAPICommand("mining")
@@ -56,14 +60,17 @@ public class LevelCommand {
                     Player otherPlayer = Bukkit.getPlayer((String) args[1]);
                     int amount = Integer.parseInt((String) args[2]);
                     assert otherPlayer != null;
-                    LevelingManager.setPlayerLevel(otherPlayer, amount);
+                    int currentAmount = ConfigLevel.getLevelingConfig().getInt("player_levels" + otherPlayer.getUniqueId() + ".xp");
+                    LevelingManager.setPlayerLevel(otherPlayer, currentAmount + amount);
+                    ConfigLevel.saveLevelingConfig();
+                    ConfigLevel.reloadLevelingConfig();
 
-                    sender.sendMessage("You have added " + amount +"levels " + " to " + otherPlayer);
+
+                    //Message
+                    sender.sendMessage("You have added " + amount + "levels " + " to " + otherPlayer);
                     otherPlayer.sendMessage(sender.getName() + " has added " + amount + "level's");
-        }).register();
+                }).register();
     }
-
-
 
 
 }

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javaproject.game.controllers.InventoryController">
+   <children>
+      <ImageView fitHeight="541.0" fitWidth="1064.0" layoutX="-327.0" layoutY="-103.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@pictures/game_background.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="item1" fitHeight="116.0" fitWidth="70.0" layoutX="33.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@items/empty.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="item2" fitHeight="108.0" fitWidth="70.0" layoutX="33.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@items/empty.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="item3" fitHeight="117.0" fitWidth="70.0" layoutX="175.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@items/empty.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="item4" fitHeight="98.0" fitWidth="70.0" layoutX="175.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@items/empty.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="inventory1" fitHeight="84.0" fitWidth="70.0" layoutX="516.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@items/empty.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="inventory2" fitHeight="84.0" fitWidth="70.0" layoutX="516.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@items/empty.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="inventory3" fitHeight="84.0" fitWidth="70.0" layoutX="516.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@items/empty.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="inventory4" fitHeight="84.0" fitWidth="70.0" layoutX="516.0" layoutY="288.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@items/empty.png" />
+         </image>
+      </ImageView>
+         <Button fx:id="goBack" layoutX="33.0" layoutY="14.0" mnemonicParsing="false" onAction="#goBack" prefHeight="37.0" prefWidth="198.0" style="-fx-background-color: linear-gradient(#293B1C, #1B3A1A); -fx-pref-width: 200; -fx-pref-height: 40; -fx-text-fill: white;" text="Go Back" />
+      <ImageView fx:id="kruisje1" fitHeight="40.0" fitWidth="41.0" layoutX="48.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@items/kruisje.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="kruisje3" fitHeight="40.0" fitWidth="41.0" layoutX="190.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@items/kruisje.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="kruisje2" fitHeight="40.0" fitWidth="41.0" layoutX="48.0" layoutY="323.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@items/kruisje.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="kruisje4" fitHeight="40.0" fitWidth="41.0" layoutX="189.0" layoutY="323.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@items/kruisje.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="id" fill="WHITE" layoutX="320.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="144.80340576171875" />
+      <Text fx:id="weight" fill="WHITE" layoutX="320.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="144.80340576171875" />
+      <Text fx:id="owner" fill="WHITE" layoutX="320.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="144.80340576171875" />
+      <Text fx:id="special" fill="WHITE" layoutX="320.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="144.80340576171875" />
+      <Text fx:id="potionText" fill="RED" layoutX="36.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You just took an potion of" visible="false" wrappingWidth="164.7312890804617" />
+      <Text fx:id="potionAmount" fill="RED" layoutX="190.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 hp" visible="false" />
+   </children>
+</AnchorPane>

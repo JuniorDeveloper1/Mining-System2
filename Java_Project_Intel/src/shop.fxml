@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javaproject.game.controllers.ShopController">
+   <children>
+      <ImageView fitHeight="635.0" fitWidth="995.0" layoutX="-158.0" layoutY="-74.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@pictures/game_background.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="weaponImage" fitHeight="150.0" fitWidth="200.0" layoutX="53.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@items/empty.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="armorImage" fitHeight="150.0" fitWidth="200.0" layoutX="311.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@items/empty.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="backpackImage" fitHeight="150.0" fitWidth="200.0" layoutX="599.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@items/empty.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="goBack" layoutX="27.0" layoutY="25.0" mnemonicParsing="false" onAction="#goBack" prefHeight="25.0" prefWidth="185.0" style="-fx-background-color: linear-gradient(#293B1C, #1B3A1A); -fx-text-fill: white;" text="GO BACK" />
+      <Button fx:id="weaponButton" layoutX="94.0" layoutY="267.0" mnemonicParsing="false" onAction="#weaponBuy" prefHeight="25.0" prefWidth="52.0" style="-fx-background-color: linear-gradient(#293B1C, #1B3A1A); -fx-text-fill: white;" text="BUY" />
+      <Text fill="WHITE" layoutX="81.0" layoutY="354.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" wrappingWidth="43.51171875" />
+      <Text fill="WHITE" layoutX="82.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WEIGHT" />
+      <Text fill="WHITE" layoutX="80.0" layoutY="410.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Damage" wrappingWidth="52.17840576171875" />
+      <Text fill="WHITE" layoutX="87.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cost" wrappingWidth="38.0" />
+      <Text fill="WHITE" layoutX="338.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" wrappingWidth="43.51171875" />
+      <Text fill="WHITE" layoutX="338.0" layoutY="379.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WEIGHT" />
+      <Text fill="WHITE" layoutX="336.0" layoutY="410.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Protection" wrappingWidth="62.17840576171875" />
+      <Text fill="WHITE" layoutX="348.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cost" wrappingWidth="38.0" />
+      <Text fill="WHITE" layoutX="630.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" wrappingWidth="43.51171875" />
+      <Text fill="WHITE" layoutX="631.0" layoutY="394.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WEIGHT" />
+      <Text fill="WHITE" layoutX="629.0" layoutY="424.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Capacity" wrappingWidth="52.17840576171875" />
+      <Text fill="WHITE" layoutX="636.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cost" wrappingWidth="38.0" />
+      <Button fx:id="armorButton" layoutX="360.0" layoutY="267.0" mnemonicParsing="false" onAction="#armorBuy" prefHeight="25.0" prefWidth="52.0" style="-fx-background-color: linear-gradient(#293B1C, #1B3A1A); -fx-text-fill: white;" text="BUY" />
+      <Button fx:id="backpackButton" layoutX="648.0" layoutY="267.0" mnemonicParsing="false" onAction="#backpackBuy" prefHeight="25.0" prefWidth="52.0" style="-fx-background-color: linear-gradient(#293B1C, #1B3A1A); -fx-text-fill: white;" text="BUY" />
+      <Text fx:id="weaponID" fill="WHITE" layoutX="140.0" layoutY="354.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="175.66668701171875" />
+      <Text fx:id="weaponWeight" fill="WHITE" layoutX="140.0" layoutY="378.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="57.0" />
+      <Text fx:id="weaponDamage" fill="WHITE" layoutX="139.0" layoutY="409.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="52.17840576171875" />
+      <Text fx:id="weaponCost" fill="WHITE" layoutX="142.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="38.0" />
+      <Text fx:id="armorID" fill="WHITE" layoutX="395.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="230.33331298828125" />
+      <Text fx:id="armorWeight" fill="WHITE" layoutX="396.0" layoutY="381.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="57.0" />
+      <Text fx:id="armorProtection" fill="WHITE" layoutX="395.0" layoutY="412.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="52.17840576171875" />
+      <Text fx:id="armorCost" fill="WHITE" layoutX="398.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="38.0" />
+      <Text fx:id="backpackID" fill="WHITE" layoutX="705.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="130.6666259765625" />
+      <Text fx:id="backpackWeight" fill="WHITE" layoutX="707.0" layoutY="391.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="57.0" />
+      <Text fx:id="backpackCapacity" fill="WHITE" layoutX="706.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="52.17840576171875" />
+      <Text fx:id="backpackCost" fill="WHITE" layoutX="709.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="38.0" />
+      <Text fx:id="notEnoughCoins" fill="RED" layoutX="247.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOT ENOUGH COINS" visible="false">
+         <font>
+            <Font size="51.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

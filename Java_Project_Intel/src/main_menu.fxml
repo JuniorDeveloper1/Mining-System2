@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="559.0" prefWidth="808.0" style="-fx-background-color: #2E2E2E;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javaproject.game.controllers.MainMenuController">
+   <ImageView fitHeight="777.0" fitWidth="1140.0" layoutX="-376.0" layoutY="-16.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@pictures/main_menu.png" />
+      </image>
+   </ImageView>
+   <Label layoutX="297.0" text="Fight the" textFill="WHITE">
+      <font>
+         <Font size="26.0" />
+      </font></Label>
+   <Label layoutX="255.0" layoutY="55.0" styleClass="title-text" text="Forest Monsters" textFill="WHITE">
+      <font>
+         <Font size="26.0" />
+      </font></Label>
+   <Label layoutX="260.0" layoutY="167.0" styleClass="hero-name-label" text="Enter Your Hero Name:" textFill="WHITE">
+      <font>
+         <Font name="System Bold" size="20.0" />
+      </font></Label>
+   <TextField fx:id="nameInput" layoutX="97.0" layoutY="218.0" prefHeight="25.0" prefWidth="502.0" promptText="Enter your name" styleClass="text-input" />
+   <Button fx:id="play" depthTest="ENABLE" layoutX="290.0" layoutY="396.0" onAction="#play" prefHeight="17.0" prefWidth="85.0" style="-fx-background-color: linear-gradient(#293B1C, #1B3A1A); -fx-pref-width: 120;" text="Play" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS" />
+   <Button depthTest="ENABLE" layoutX="287.0" layoutY="320.0" onAction="#exit" prefHeight="17.0" prefWidth="91.0" style="-fx-background-color: linear-gradient(#293B1C, #1B3A1A); -fx-pref-width: 120;" text="Exit" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS" />
+   <Text fx:id="validName" fill="RED" layoutX="249.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Isn't valid name" visible="false" wrappingWidth="218.0">
+      <font>
+         <Font name="System Bold" size="24.0" />
+      </font>
+   </Text>
+   <Text fx:id="validName1" fill="#00ff4f" layoutX="260.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valid name!" visible="false" wrappingWidth="218.0">
+      <font>
+         <Font name="System Bold" size="24.0" />
+      </font>
+   </Text>
+</AnchorPane>

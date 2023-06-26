@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2E2E2E;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javaproject.game.controllers.FightController">
+   <children>
+      <AnchorPane fx:id="fightAnchor" prefHeight="440.0" prefWidth="972.0" visible="false">
+         <children>
+            <ImageView fitHeight="493.0" fitWidth="1202.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@pictures/fight_arena.png" />
+               </image></ImageView>
+            <ProgressBar fx:id="progressHero" layoutX="159.0" layoutY="78.0" prefWidth="200.0" progress="1.0" style="-fx-accent: green; -fx-control-inner-background: red;" />
+            <ImageView fx:id="heroImage" fitHeight="283.0" fitWidth="406.0" layoutX="122.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@characters/wizard_idle.gif" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="monsterImage" fitHeight="303.0" fitWidth="281.0" layoutX="552.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@characters/william-robinson-boss-passive.gif" />
+               </image>
+            </ImageView>
+            <ProgressBar fx:id="progressMonster" layoutX="656.0" layoutY="65.0" nodeOrientation="RIGHT_TO_LEFT" prefWidth="200.0" progress="1.0" style="-fx-accent: green; -fx-control-inner-background: red;" />
+            <Text fx:id="heroName" fill="WHITE" layoutX="165.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="187.81759643554688">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Text>
+            <Text fx:id="monsterName" fill="WHITE" layoutX="675.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="RIGHT" wrappingWidth="187.81759643554688">
+               <font>
+                  <Font size="26.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </Text>
+            <Text fx:id="monsterHP" layoutX="623.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
+            <Text fx:id="heroHP" layoutX="373.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
+            <Button fx:id="runButton" layoutX="460.0" layoutY="355.0" mnemonicParsing="false" onAction="#run" prefHeight="17.0" prefWidth="102.0" style="-fx-background-color: linear-gradient(#293B1C, #1B3A1A); -fx-text-fill: white;" text="RUN" />
+            <Button fx:id="hit" layoutX="410.0" layoutY="277.0" mnemonicParsing="false" onAction="#hit" prefHeight="17.0" prefWidth="102.0" style="-fx-background-color: linear-gradient(#293B1C, #1B3A1A); -fx-text-fill: white;" text="HIT" />
+            <Button fx:id="next" layoutX="638.0" layoutY="415.0" mnemonicParsing="false" onAction="#next" prefHeight="32.0" prefWidth="277.0" style="-fx-background-color: linear-gradient(#293B1C, #1B3A1A); -fx-text-fill: white;" text="next" />
+            <Text fx:id="trapped" fill="RED" layoutX="310.0" layoutY="443.0" strokeType="OUTSIDE" strokeWidth="0.0" text="YOU'VE BEEN TRAPPED" visible="false">
+               <font>
+                  <Font size="46.0" />
+               </font>
+            </Text>
+            <Text layoutX="465.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chance to run" wrappingWidth="81.75851440429688" />
+            <Text fx:id="chanceOutput" layoutX="548.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
+            <Text layoutX="466.0" layoutY="420.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cost" />
+            <Text fx:id="costOutput" layoutX="548.0" layoutY="419.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
+            <ImageView fx:id="inventoryImage" fitHeight="86.0" fitWidth="92.0" layoutX="36.0" layoutY="388.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@items/backpack_image.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+      <AnchorPane fx:id="inventoryAnchor" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <ImageView fitHeight="754.0" fitWidth="1671.0" layoutX="-327.0" layoutY="-103.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@pictures/game_background.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="item1" fitHeight="116.0" fitWidth="70.0" layoutX="33.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@items/empty.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="item2" fitHeight="108.0" fitWidth="70.0" layoutX="33.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@items/empty.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="item3" fitHeight="117.0" fitWidth="70.0" layoutX="175.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@items/empty.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="item4" fitHeight="98.0" fitWidth="70.0" layoutX="175.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@items/empty.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="inventory1" fitHeight="84.0" fitWidth="70.0" layoutX="516.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@items/empty.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="inventory2" fitHeight="84.0" fitWidth="70.0" layoutX="516.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@items/empty.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="inventory3" fitHeight="84.0" fitWidth="70.0" layoutX="516.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@items/empty.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="inventory4" fitHeight="84.0" fitWidth="70.0" layoutX="516.0" layoutY="288.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@items/empty.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="goBack" layoutX="33.0" layoutY="14.0" mnemonicParsing="false" onAction="#goBack" prefHeight="37.0" prefWidth="198.0" style="-fx-background-color: linear-gradient(#293B1C, #1B3A1A); -fx-pref-width: 200; -fx-pref-height: 40; -fx-text-fill: white;" text="Go Back" />
+            <ImageView fx:id="kruisje1" fitHeight="40.0" fitWidth="41.0" layoutX="48.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@items/kruisje.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="kruisje3" fitHeight="40.0" fitWidth="41.0" layoutX="190.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@items/kruisje.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="kruisje2" fitHeight="40.0" fitWidth="41.0" layoutX="48.0" layoutY="323.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@items/kruisje.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="kruisje4" fitHeight="40.0" fitWidth="41.0" layoutX="189.0" layoutY="323.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@items/kruisje.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="id" fill="WHITE" layoutX="320.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="144.80340576171875" />
+            <Text fx:id="weight" fill="WHITE" layoutX="320.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="144.80340576171875" />
+            <Text fx:id="owner" fill="WHITE" layoutX="320.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="144.80340576171875" />
+            <Text fx:id="special" fill="WHITE" layoutX="320.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="144.80340576171875" />
+            <Text fx:id="potionText" fill="RED" layoutX="26.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You just took an potion of" visible="false" wrappingWidth="164.7312890804617" />
+            <Text fx:id="potionAmount" fill="RED" layoutX="180.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 hp" visible="false" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
